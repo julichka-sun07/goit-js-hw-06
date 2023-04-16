@@ -7,12 +7,24 @@ const ingredients = [
   'Condiments',
 ];
 
-const navItemEl = document.getElementById ('ingredients');
-console.log(navItemEl);
+// const navItemEl = document.getElementById ('ingredients');
+// console.log(navItemEl);
 
-for ( const ingredient of ingredients){
-  const elementLi = document.createElement('li');
+const arrayIngredients = ingredients.map((ingredient) => {
+const elementLi = document.createElement('li');
   elementLi.classList.add('item');
   elementLi.textContent = ingredient;
-  navItemEl.appendChild(elementLi);
-}
+  console.log(elementLi);
+  return elementLi;
+  });
+  
+const listEngidElements = document.querySelector("#ingredients");
+console.log(listEngidElements);
+listEngidElements.append(...arrayIngredients);
+
+
+
+
+
+
+

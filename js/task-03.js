@@ -14,13 +14,12 @@ const images = [
 ];
 
 const ulElement = document.querySelector('.gallery');
-// const imegesEl = document.querySelectorAll('.photo');
-// const listElement = document.querySelectorAll('.list');
+const imgElement = ({ url, alt}) => {
+  return `<li> <img src="${url}"  alt="${alt}" width="450" height="300"/> </li>`
+};
 
-const markup = images
-.map((image) => `<li class="list"><img class="photo" 
-src=${image.url} alt='${image.alt}' width='400'></img></li>`)
-.join("");
-ulElement.insertAdjacentElement('beforeend', markup );
+const imegesList = images.map(image => imgElement(image)).join("");
 
+ulElement.insertAdjacentHTML("afterbegin", imegesList);
+console.log(ulElement);
 
